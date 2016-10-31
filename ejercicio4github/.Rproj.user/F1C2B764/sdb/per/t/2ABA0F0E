@@ -1,0 +1,17 @@
+{
+    "contents" : "# Ejercicio 5 - Extra (1 punto)\n# Medición de tiempos. Implementa una función utilizando un bucle for que busque el primer\n# elemento divisible entre dos dentro de un vector. Cambia la implementación anterior por un\n# bucle while. Comprueba cómo afecta el tamaño del vector a ambas implementaciones.\n# Realiza mediciones de tiempos con la función proc.time().\n\n# Se probaron tres implementaciones:\n# - \"for\" con índice\n# - \"for\" del estilo \"foreach\" (es decir, sin acceder por número índice del vector)\n# - \"While\"\n# La implementación \"foreach\" resultó en mejor desempeño que las otras dos.\n\n\nprimer.par.for <- function(vector.bucle) {\n  for (i in 1:length(vector.bucle)) {\n    if (vector.bucle[i] %% 2 == 0) {\n      return (vector.bucle[i])\n    }\n  }\n  return (NULL)\n}\n\nprimer.par.foreach <- function(vector.bucle) {\n  for (valor in vector.bucle) {\n    if (valor %% 2 == 0) {\n      return (valor)\n    }\n  }\n  return (NULL)\n}\n\nprimer.par.while <- function(vector.bucle) {\n  i <- 1\n  largo.vector <- length(vector.bucle)\n  while ( i <= largo.vector )  {\n    if (vector.bucle[i] %% 2 == 0) {\n      return (vector.bucle[i])\n    }\n    i <- i + 1\n  }\n  return (NULL)\n}\n\ncalcular.tiempo <- function(funcion.evaluada, vector) {\n  ptm <- proc.time()\n  funcion.evaluada(vector)\n  return (proc.time() - ptm)\n}\n",
+    "created" : 1477820421018.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3374080845",
+    "id" : "2ABA0F0E",
+    "lastKnownWriteTime" : 1477822604,
+    "path" : "~/Proyecto R/ejercicio4github/R/Ejercicio 5.R",
+    "project_path" : "R/Ejercicio 5.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
